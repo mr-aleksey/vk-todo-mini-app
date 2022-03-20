@@ -14,12 +14,13 @@ function PanelCreateTask () {
   const dispatch = useDispatch()
   
   const onCreateTaskClick = useCallback((task: IUserTaskData) => dispatch(createTask(task)), [])
+  const onRedirectClick = useCallback(() => router.pushPage(PAGE_MAIN), [])
 
   return (
     <PanelHeaderTemplate title='Новая задача'>
       <Group>
         <TaskForm
-          onRedirect={() => router.pushPage(PAGE_MAIN)}
+          onRedirect={onRedirectClick}
           onSubmit={onCreateTaskClick}
           buttonText='Cоздать'
         />

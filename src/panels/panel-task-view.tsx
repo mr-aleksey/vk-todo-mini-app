@@ -29,9 +29,11 @@ function PanelTaskView () {
   const dispatch = useDispatch()
   const [taskId, setTaskId] = useState(id)
   
+  // По хорошему этого тут не должно быть,
+  // Я немного не доразобрался с @happysanta/router
+  // Потому что документация на https://happysanta.github.io/router/ - мертвая :(
   useEffect(() => {
     router.onEnterPage(PAGE_TASK, (route) => {
-      console.log('da')
       setTaskId(route.params.id)
     })
   }, [router])

@@ -15,13 +15,14 @@ function PanelEditTask () {
   const dispatch = useDispatch()
 
   const onCreateTaskClick = useCallback((task: IUserTaskData) => dispatch(editTask(task)), [])
+  const onRedirectClick = useCallback(() => router.pushPage(PAGE_TASK, { id }), [])
 
   return (
     <PanelHeaderTemplate title='Редактировать задачу'>
       <Group>
         <TaskForm
           taskId={id}
-          onRedirect={() => router.pushPage(PAGE_TASK, { id })}
+          onRedirect={onRedirectClick}
           onSubmit={onCreateTaskClick}
           buttonText='Сохранить'
         />

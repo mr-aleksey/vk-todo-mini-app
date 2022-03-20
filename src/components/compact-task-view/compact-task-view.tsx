@@ -26,6 +26,7 @@ function CompactTaskView ({
   )
 }
 
+
 function getTimeStatus (task: ITask): string {
   if (task.endTime) {
     return `завершена ${task.endTime.toLocaleString('ru-RU', { day: 'numeric', month: 'long' })}`
