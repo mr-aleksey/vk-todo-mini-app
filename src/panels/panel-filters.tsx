@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../store'
-import { setFilters } from '../store/slices/filters-slice'
+import { setFilters, resetFilters } from '../store/slices/filters-slice'
 import {
   DateRangeInput,
   FormLayoutGroup,
@@ -98,6 +98,17 @@ function PanelFilter () {
             }}
           >
             Применить фильтры
+          </Button>
+          <Button
+            size='l'
+            stretched
+            appearance='neutral'
+            onClick={() =>  {
+              dispatch(resetFilters())
+              router.pushPage(PAGE_MAIN)
+            }}
+          >
+            Сбросить фильтры
           </Button>
         </FormItem>
       </FormLayout>

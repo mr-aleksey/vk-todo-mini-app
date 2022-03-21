@@ -33,12 +33,21 @@ export const filtersSlice = createSlice({
       state.creationTime = creationTime
       state.status = status
     },
+    resetFilters: (state) => {
+      state.name = initialState.name
+      state.gradeFrom = initialState.gradeFrom
+      state.gradeTo = initialState.gradeTo
+      state.parentId = initialState.parentId
+      state.creationTime = initialState.creationTime
+      state.status = initialState.status
+    }
   },
 })
 
 
 export const { 
   setFilters,
+  resetFilters,
 } = filtersSlice.actions
 
 
